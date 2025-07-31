@@ -112,7 +112,17 @@ document.addEventListener("DOMContentLoaded", () => {
     el.innerHTML = html;
   });
 });
+// MAT UI
+document.addEventListener("DOMContentLoaded", () => {
+    const blinkBlocs = document.querySelectorAll('blink');
 
+    setInterval(() => {
+        blinkBlocs.forEach((el) => {
+            el.style.opacity = (el.style.opacity == "0") ? "1" : "0";
+        });
+    }, 500);
+});
+// CSS styles detached for optimisation.
 const style = document.createElement('style');
 style.textContent = `
   md {
@@ -158,6 +168,9 @@ style.textContent = `
 
   md h5 {
     font-size: 1.3rem;
+  }
+  img, canvas, svg, video {
+    image-rendering: pixelated;
   }
 `;
 document.head.appendChild(style);
