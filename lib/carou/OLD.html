@@ -1,0 +1,84 @@
+<style>
+.carousel-main {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  /*max-width: 600px;*/
+  overflow: hidden;
+  max-height: calc(100vh - 80px);
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  /*width: 100%;*/
+}
+
+.carousel-item {
+  min-width: 100%;
+  width: calc(100% - 10px); 
+  height: calc(100vh - 80px); 
+  background-size: cover; 
+  background-position: center;
+  border-radius: 10px;
+  text-align: left;
+  background-color: black;
+  color:white;
+}
+
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+.content {
+  padding: 20px;
+}
+</style>
+<center>
+  <main class="carousel-main">
+    <div class="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="background-image: url('/OneStaller/assets/BCE1.jpg');">
+          <div class="content">
+            <H1>Publish on OneStaller is FREE!!</H1>
+            <button onclick="window.location.href = '/OneStaller/Dev-Eara'">Get started!</button>
+            Note to alpha testers: This website is always in developpement, so you may encounter bugs or incomplete features. Please report any issues you find to the development team. Also, DO NOT TRY TO PUBLISH ANY APPLICATIONS! (The website can be turned down.) To see a potential update, clean your cache and reload the page. Thank you for your understanding!
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: url('/MPC/assets/BC.jpg');">
+          <div class="content">
+            <H1>Join our programmers community!</H1>
+            <button onclick="window.location.href = '/MPC/'">Let's see!</button>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: url('/M.png'); color: black;">
+          <div class="content">
+            <H1>One Staller ALPHA Update</H1>
+            <marquee>This website is in construction.</marquee>
+          </div>
+        </div>
+      </div>
+      <button class="prev">‹-</button>
+      <button class="next">-›</button>
+    </div>
+  </main>
+</center>
