@@ -1,5 +1,5 @@
 /*
-		MAT API V2
+		MAT API V2.1
 		This file is a compilation of MAT APIs. The next apis are inclued: 
 */
 //Carou
@@ -70,11 +70,11 @@ function Carou(CarouID, action, arg) {
 		};
 	}
 
-	if (action === "BuildDelfauts") {
+	if (action === "BuildDefaults") {
 		console.log("CAROU:BUILDDel");
-		function CarouDelfautBuilderStyles() {
-			const CarouDelfautStyle = document.createElement('style');
-			CarouDelfautStyle.innerHTML = `
+		function CarouDefaultBuilderStyles() {
+			const CarouDefaultStyle = document.createElement('style');
+			CarouDefaultStyle.innerHTML = `
 				.carousel-main {
 					display: flex;
 					justify-content: center;
@@ -116,10 +116,10 @@ function Carou(CarouID, action, arg) {
 				button.next { right: 10px; }
 				.carou-content { padding: 20px; }
 			`;
-			document.head.appendChild(CarouDelfautStyle);
+			document.head.appendChild(CarouDefaultStyle);
 		}
 
-		function CarouDelfautBuilderTimer() {
+		function CarouDefaultBuilderTimer() {
 			const carouselInner = getCarouselInner();
 			if (!carouselInner) {
 				console.warn('CarouBuilder: no .carousel-inner element found for timer. Call Build first.');
@@ -143,7 +143,8 @@ function Carou(CarouID, action, arg) {
 			function nextSlide() {
 				const items = carouselInner.querySelectorAll('.carousel-item');
 				if (items.length === 0) return;
-				showSlide(currentIndex + 1);
+				currentIndex += 1
+				showSlide(currentIndex);
 			}
 
 			let autoSlide = setInterval(nextSlide, 7000);
@@ -160,22 +161,22 @@ function Carou(CarouID, action, arg) {
 		}
 
 		if (!arg || arg === "") {
-			console.warn("CarouBuilder: DelfautBuilder: You must specify a system to apply the delfaut build. Delfaut build will be considered as 'all'.");
+			console.warn("CarouBuilder: DefaultBuilder: You must specify a system to apply the default build. Default build will be considered as 'all'.");
 			arg = "all";
 		}
 		if (arg === "all") {
-			CarouDelfautBuilderStyles();
-			CarouDelfautBuilderTimer();
+			CarouDefaultBuilderStyles();
+			CarouDefaultBuilderTimer();
 		}
 		if (arg === "styles") {
-			CarouDelfautBuilderStyles();
+			CarouDefaultBuilderStyles();
 		}
 		if (arg === "timer") {
-			CarouDelfautBuilderTimer();
+			CarouDefaultBuilderTimer();
 		}
 	}
 
-	if (action === "insert") {
+	if (action === "Insert") {
 		console.log("CAROU:INSERT");
 		selectedCarou.CarouNumber += 1;
 		const carouselInner = getCarouselInner();
@@ -204,7 +205,7 @@ function Carou(CarouID, action, arg) {
 		if (typeof selectedCarou._carouTimerReset === 'function') selectedCarou._carouTimerReset();
 	}
 
-	if (action === "delete") {
+	if (action === "Delete") {
 		console.log("CAROU:DELETE");
 		const carouselInner = getCarouselInner();
 		if (!carouselInner) return;
