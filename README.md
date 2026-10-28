@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="art/header-dark.png">
+  <img alt="MAT JS API" src="art/header-light.png">
+</picture>
+
 # mat-services-ORG.github.io/API
 ## Website status:
 [![GitHub last commit](https://img.shields.io/github/last-commit/MAT-Services-ORG/API?style=plastic)](https://github.com/MAT-services-ORG/API/commits)
